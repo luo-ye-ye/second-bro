@@ -54,6 +54,7 @@ jobs:
         with:
           context: .
           push: true
-          # 注意：这里的 tags 会自动拼上你的用户名和仓库名
-          # 如果你的用户名有大写字母，GHCR 可能会报错，这里为了简化，我们暂时用这个标准写法
-          tags: ghcr.io/${{ github.repository_owner }}/ci-cd-practice:latest
+          # 修改
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/ci-cd-practice:latest
+            ghcr.io/${{ github.repository_owner }}/ci-cd-practice:${{ github.sha }}
